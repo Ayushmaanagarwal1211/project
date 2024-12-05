@@ -10,13 +10,16 @@ export default function RenderImage({url,ready,error,index}) {
     if(!ready){
         setError(true)
     }
+
     function handleError(){
         if(counts<3){
-            setError_img(true)
             setTimeout(()=>{
                 setCounts(value=>value+1)
                 setError_img(false)
-            },5000)
+            },5500)
+            setTimeout(()=>{
+                setError_img(true)
+            },500)
         }else{
             setShowError(true)
         }
